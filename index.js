@@ -11,10 +11,10 @@ const server=Hapi.server({
 // Add the route
 server.route({
     method:'GET',
-    path:'/hello',
+    path:'/{path*}',
     handler:function(request,h) {
 
-        return'hello world';
+        return"Nate's app";
     }
 });
 
@@ -22,12 +22,9 @@ server.route({
 const start =  async function() {
 
     try {
-        console.log("Starting!!!!");
         await server.start();
-        console.log("Done starting");
     }
     catch (err) {
-        console.log("Errord");
         console.log(err);
         process.exit(1);
     }
