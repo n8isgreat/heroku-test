@@ -22,9 +22,12 @@ server.route({
 const start =  async function() {
 
     try {
+        console.log("Starting!!!!");
         await server.start();
+        console.log("Done starting");
     }
     catch (err) {
+        console.log("Errord");
         console.log(err);
         process.exit(1);
     }
