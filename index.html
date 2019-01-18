@@ -1,0 +1,53 @@
+<html>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/public/style.css">
+	<body>
+		<div id="app" v-bind:class="{surf: isSurf, sell: isSell}">
+				<div id="surfcontent" class="contentarea">
+					<div class="maintitle">Surf</div>
+					<div class="subtitle">My Top Surf Spots</div>
+					<div class="text">Suspendisse ornare dui magna, eget pulvinar tortor molestie eu. Maecenas at sem orci. Fusce ullamcorper tincidunt sapien non scelerisque. Nulla magna magna, rutrum vitae ex nec, consequat tempus lorem. Mauris elementum tellus vitae lacinia aliquet. Ut in nisi fringilla, tincidunt nulla ut, porta leo. Proin ultricies odio eu mollis mattis. Sed pulvinar faucibus est vel convallis.</div>
+				</div>
+				<div id="sellcontent" class="contentarea">
+					<div class="maintitle">Sell</div>
+					<div class="subtitle">My Top Opportunities</div>
+					<div class="text">Donec aliquet libero et consequat facilisis. Vivamus pharetra, augue et porttitor semper, nunc lorem rutrum lacus, vitae sagittis est odio id sapien. Fusce eget ultrices ante, ac pulvinar nunc. Etiam tempor leo eget mauris feugiat, ut iaculis sem pharetra. Donec iaculis eros eu vulputate ullamcorper. Pellentesque ultricies, augue at placerat dapibus, quam magna condimentum tellus, placerat molestie erat magna quis justo. Mauris blandit sollicitudin magna a feugiat. Suspendisse potenti. Nulla lacinia felis vitae leo rutrum imperdiet. Nulla aliquet neque vitae auctor consequat.</div>
+				</div>
+			<div id="center">
+				<div id="center-inner">
+					<div>
+						<div id="surfbutton" class="button" v-on:click="toggleSurf">Surf</div>
+						<img id="centerimage" v-on:click="allOff" src="/public/nate.jpg"/>
+						<div id="sellbutton" class="button" v-on:click="toggleSell">Sell</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				isSurf: false,
+				isSell: false,
+			},
+			methods: {
+				toggleSurf: function() {
+					this.isSurf = !this.isSurf;
+					this.isSell = false;
+				},
+				toggleSell: function() {
+					this.isSell = !this.isSell;
+					this.isSurf = false;
+				},
+				allOff: function() {
+					this.isSell = false;
+					this.isSurf = false;
+				}
+			}
+		});
+	</script>
+</html>
+

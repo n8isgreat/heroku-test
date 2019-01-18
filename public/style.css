@@ -1,0 +1,129 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+.sell #center {
+	left: 30%;
+}
+
+.surf #center {
+	left: 70%;
+}
+
+.surf #surfbutton {
+	visibility: hidden;
+}
+
+.sell #sellbutton {
+	visibility: hidden;
+}
+
+#surfcontent {
+	left: 15%;
+	width: 40%;
+}
+
+#sellcontent {
+	left: 45%;
+	width: 40%;
+}
+
+.surf #surfcontent {
+	opacity: 1;
+}
+
+.sell #sellcontent {
+	opacity: 1;
+}
+
+#center {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+	text-align: center;
+	transition: left 1s;
+	transition-timing-function: ease;
+	width: 700px;
+	height: 100%;
+}
+
+#center-inner {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+	width: 100%;
+}
+
+#title {
+	text-align: center;
+	margin: 20px;
+	color: #555;
+	font-size: 18pt;
+	text-transform: uppercase;
+}
+
+#centerimage {
+	width: 200px;
+	border-radius: 200px;
+	margin: 20px;
+	vertical-align: middle;
+}
+
+.button {
+	background-position: center;
+	display: inline-block;
+	transition: background 0.8s;
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: white;
+	background-color: #555;
+	box-shadow: 0 0 4px #999;
+	outline: none;
+	width: 100px;
+	margin: 24px;
+}
+
+.button:hover {
+	background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+
+.button:active {
+	background-color: #6eb9f7;
+	background-size: 100%;
+	transition: background 0s;
+}
+
+.maintitle {
+	font-size: 30pt;
+}
+
+.subtitle {
+	font-size: 10pt;
+	font-weight: bold;
+	padding-top: 8px;
+	line-height: 20pt;
+}
+
+.text {
+	font-size: 10pt;
+	padding-top: 8px;
+	line-height: 20pt;
+}
+
+.contentarea {
+	padding-top: 40px;
+	box-sizing: border-box;
+	opacity: 0;
+	position: absolute;
+	height: 100%;
+	transition: opacity 2s;
+	transition-timing-function: ease;
+}
