@@ -2,7 +2,7 @@
 
 var knex = require("knex")({
 	client: "pg",
-	connection: process.env.DATABASE_URL || "postgres://ebaujsbvecjlzi:12edc63ce7e4c9ec49b6b97c6321fb42c0c1f2651f364bf61cbfad275222799b@ec2-23-21-171-25.compute-1.amazonaws.com:5432/dutnhmhd1tnph",
+	connection: process.env.DATABASE_URL,
 });
 
 knex.schema.hasTable("accounts").then(function(exists) {

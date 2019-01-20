@@ -4,6 +4,7 @@ const Hapi=require('hapi');
 
 const port = +process.env.PORT || 5000;
 const host = "0.0.0.0";
+const knex = require(knex);
 
 // Create a server with a host and port
 const server = Hapi.server({
@@ -24,6 +25,21 @@ const start = async function() {
 			path:'/',
 			handler: (request,h) => {
 				return h.file('./index.html');
+			}
+		});
+
+		// Add the accounts getter
+		server.route({
+			method:'GET',
+			path:'/accounts',
+			handler: (request,h) => {
+				var pg = knex({
+					client: "pg",
+					connection: process.env.DATABASE_URL,
+				});
+				return pg("accounts").then(results => {
+					return results;
+				});
 			}
 		});
 
