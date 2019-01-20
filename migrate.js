@@ -11,6 +11,14 @@ knex.schema.hasTable("accounts").then(function(exists) {
 			t.increments("id").primary();
 			t.string("name", 100);
 			t.text("description");
+		}).then(() => {
+			return knex("accounts").insert([{
+				name: "Account 1",
+				description: "Description 1",
+			},{
+				name: "Account 2",
+				description: "Description 2",
+			}]);
 		});
 	}
 }).then(() => {
