@@ -4,7 +4,7 @@ const Hapi=require('hapi');
 
 const port = +process.env.PORT || 5000;
 const host = "0.0.0.0";
-const knex = require(knex);
+const knex = require("knex");
 
 // Create a server with a host and port
 const server = Hapi.server({
