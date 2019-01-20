@@ -13,5 +13,10 @@ knex.schema.hasTable("accounts").then(function(exists) {
 			t.text("description");
 		});
 	}
+}).then(() => {
+	process.exit();
+}).catch(err => {
+	console.log(err);
+	process.exit(1);
 });
 
