@@ -21,6 +21,8 @@
   "homepage": "https://github.com/plusplusben/heroku-test#readme",
   "dependencies": {
     "hapi": "^17.8.1",
-    "inert": "^5.1.2"
+    "inert": "^5.1.2",
+    "knex": "^0.16.3",
+    "pg": "^7.8.0"
   }
 }

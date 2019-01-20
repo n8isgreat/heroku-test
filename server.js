@@ -18,12 +18,21 @@ const start = async function() {
 	try {
 		await server.register(require('inert'));
 
-		// Add the route
+		// Add the index route
 		server.route({
 			method:'GET',
 			path:'/',
 			handler: (request,h) => {
 				return h.file('./index.html');
+			}
+		});
+
+		// Add the favicon route
+		server.route({
+			method:'GET',
+			path:'/favicon.ico',
+			handler: (request,h) => {
+				return h.file('./public/favicon.ico');
 			}
 		});
 
