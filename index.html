@@ -7,7 +7,15 @@
 			<div id="surfcontent" class="contentarea">
 				<div class="maintitle">Surf</div>
 				<div class="subtitle">My Top Surf Spots</div>
-				<div class="text">Honolua Bay, Maui HI/ Shipwreck's Beach, Kauai HI/Zippers, MX/ Uluwatu, Bali Indo/ Bells Beach, AUS/ Snappers, AUS/ T-Street, CA USA/Trestles CA USA/Santa Teresa Beach, Costa Rica</div>
+				<div class="text">Surfing Weather from Surf Reports API</div>
+				<div class="surfspots">
+					<div v-for="spot in surfSpots" class="surfspot">
+						<div class="itemtitle">{{spot.spot_name}}</div>
+						<div class="itembadge">
+							<img v-bind:src="`https://maps.googleapis.com/maps/api/staticmap?center=${spot.latitude}%2c%20${spot.longitude}&zoom=13&size=150x100&key=AIzaSyAhqjXYSLBMBD8wETp0DWn85hQOHP1kmzk&markers=color:blue%7C${spot.latitude}%2c%20${spot.longitude}`"/>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="sellcontent" class="contentarea">
 				<div class="maintitle">Sell</div>
@@ -23,31 +31,8 @@
 					</div>
 				</div>
 			</div>
-			
 		</div>
 	</body>
-	<script>
-		var app = new Vue({
-			el: '#app',
-			data: {
-				isSurf: false,
-				isSell: false,
-			},
-			methods: {
-				toggleSurf: function() {
-					this.isSurf = !this.isSurf;
-					this.isSell = false;
-				},
-				toggleSell: function() {
-					this.isSell = !this.isSell;
-					this.isSurf = false;
-				},
-				allOff: function() {
-					this.isSell = false;
-					this.isSurf = false;
-				}
-			}
-		});
-	</script>
+	<script src="public/app.js"></script>
 </html>
 

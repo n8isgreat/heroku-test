@@ -127,3 +127,15 @@ body {
 	transition: opacity 2s;
 	transition-timing-function: ease;
 }
+
+.itembadge {
+	margin: 8px 0;
+}
+
+.itembadge > img {
+	border-radius: 8px;
+}
+
+.itemtitle {
+	margin: 8px 0;
+}
