@@ -7,6 +7,7 @@ var knex = require("knex")({
 var fs = require('fs');
 var accounts = JSON.parse(fs.readFileSync("./public/accounts.json", "utf8"));
 
+console.log("Starting Database Migration...")
 knex.schema.hasTable("accounts").then(function(exists) {
 	if (!exists) {
 		return knex.schema.createTable("accounts", function(t) {
@@ -17,9 +18,12 @@ knex.schema.hasTable("accounts").then(function(exists) {
 			return knex("accounts").insert(accounts);
 		});
 	}
+	console.log("Accounts table already exists, skipping migration.");
 }).then(() => {
+	console.log("Release stage finished successfully.");
 	process.exit();
 }).catch(err => {
+	console.log("Release stage failed. Maybe no database was provisioned?");
 	console.log(err);
 	process.exit(1);
 });
