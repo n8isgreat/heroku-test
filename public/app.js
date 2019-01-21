@@ -26,9 +26,9 @@ var app = new Vue({
 		loadData: async function() {
 			console.log("loading data...");
 			const [spots, wind, swell] = await Promise.all([
-				fetch("http://api.spitcast.com/api/county/spots/orange-county/").then(response => response.json()),
-				fetch("http://api.spitcast.com/api/county/wind/orange-county/").then(response => response.json()),
-				fetch("http://api.spitcast.com/api/county/swell/orange-county/").then(response => response.json()),
+				fetch("public/spots.json").then(response => response.json()),
+				fetch("public/wind.json").then(response => response.json()),
+				fetch("public/swell.json").then(response => response.json()),
 			]);
 			this.surfSpots = spots.slice(0,4);
 			console.log("spots");
