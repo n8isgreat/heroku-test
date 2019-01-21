@@ -20,7 +20,12 @@
 			<div id="sellcontent" class="contentarea">
 				<div class="maintitle">Sell</div>
 				<div class="subtitle">My Top Opportunities</div>
-				<div class="text">Lamb Weston Kennewick, WA/ComSuper Melbourne, AUS/Alaska Airlines Seattle, WA/Stanwell Energy, Brisbane AUS/Salem Hospital, OR/Williams Company Tulsa, OK/Community Medical Centers Fresno, CA/University of British Columbia Vancouver, Canada/BNSF Railway Company Fort Worth, TX</div>
+				<div class="text">Let's get it done!</div>
+				<div class="surfspots">
+					<div v-for="account in accounts" class="surfspot">
+						<div class="itemtitle">{{account.name}}</div>
+					</div>
+				</div>
 			</div>
 			<div id="center">
 				<div id="center-inner">
